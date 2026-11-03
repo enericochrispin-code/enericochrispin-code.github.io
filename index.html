@@ -232,20 +232,19 @@
     ["International Biometric Society (IBS) Malawi Inter-Region Scientific Symposium: “Modelling Determinants of Overweight and Obesity in Malawian Women” (presented)","24–25 Oct 2024"],
     ["Scientific Writing Workshop, KUHeS and University of Malawi, T & D Conference Centre, Zomba (attended)","2022"]
   ];
- const certs = {
-  pts: [
-    "Fraud Awareness, Prevention and Detection Training, CARE Academy (Jun 2026)",
-    "Prevention of Sexual Harassment, Exploitation and Abuse (PSHEA), CARE Academy (May 2026)",
-    "Certificate in Project Management, Monitoring and Evaluation, University of Malawi (Apr 2025)",
-    "Certificate in Big Data Analytics, Malawi University of Science and Technology (May–Sep 2024)",
-    "Certificate in Business Intelligence and Data Analytics, Malawi University of Science and Technology (May–Sep 2024)",
-    "Certificate in Child Development: Specific Learning Disorders, Alison Online (2024)",
-    "Diploma in Data Analytics, Athena Global Education (2023)",
-    "Certificate in Personnel Management, Athena Global Education (2023)",
-    "Certificate in Power BI: Data Modelling and DAX, Athena Global Education (2023)",
-    "Certificate in Operations and Project Management, Athena Global Education (2023)",
-    "Certificate in E-Learning and Online Learning Assessment, University of Malawi (2023)"]
- };
+const certs = [
+    ["Fraud Awareness, Prevention and Detection Training, CARE Academy", "Jun 2026"],
+    ["Prevention of Sexual Harassment, Exploitation and Abuse (PSHEA), CARE Academy", "May 2026"],
+    ["Certificate in Project Management, Monitoring and Evaluation, University of Malawi", "Apr 2025"],
+    ["Certificate in Big Data Analytics, Malawi University of Science and Technology", "May–Sep 2024"],
+    ["Certificate in Business Intelligence and Data Analytics, Malawi University of Science and Technology", "May–Sep 2024"],
+    ["Certificate in Child Development: Specific Learning Disorders, Alison Online", "2024"],
+    ["Diploma in Data Analytics, Athena Global Education", "2023"],
+    ["Certificate in Personnel Management, Athena Global Education", "2023"],
+    ["Certificate in Power BI: Data Modelling and DAX, Athena Global Education", "2023"],
+    ["Certificate in Operations and Project Management, Athena Global Education", "2023"],
+    ["Certificate in E-Learning and Online Learning Assessment, University of Malawi", "2023"]
+  ];
   const $ = id => document.getElementById(id);
   $("jobs").innerHTML = jobs.map(j => `
     <article class="job"><div class="when">${j.when}</div>
@@ -258,7 +257,7 @@
   $("papers").innerHTML = papers.map(pub).join("");
   const li = a => `<li>${a[0]} <span>${a[1]}</span></li>`;
   $("talks").innerHTML = talks.map(li).join("");
-  $("certs").innerHTML = certs.map(li).join("");
+  $("certs").innerHTML = certs.map(li).join(""); 
   $("year").textContent = new Date().getFullYear();
 
   const root = document.documentElement;
