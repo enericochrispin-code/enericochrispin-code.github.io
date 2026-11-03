@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Enerico Chrispin – Statistician, M&amp;E and Data Analytics</title>
+<meta name="description" content="Portfolio of Enerico Chrispin, a statistician working in monitoring and evaluation, econometrics and data analytics in Malawi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:#eef2f6; --ink:#14213d; --muted:#4b5870; --accent:#2f4bff; --line:#c9d3e0;
+    --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+    --body:"Source Serif 4",Georgia,serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --paper:#101a33; --ink:#e8edf7; --muted:#9fb0cf; --accent:#8fa2ff; --line:#26345a; }
+  }
+  :root[data-theme="dark"] { --paper:#101a33; --ink:#e8edf7; --muted:#9fb0cf; --accent:#8fa2ff; --line:#26345a; }
+  * { box-sizing:border-box; margin:0; }
+  :root { padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); }
+  html { scroll-behavior:smooth; scroll-padding-top:env(safe-area-inset-top,0px); }
+  body { background:var(--paper); color:var(--ink); font:1.1rem/1.7 var(--body); -webkit-font-smoothing:antialiased; }
+  a { color:inherit; text-decoration-color:var(--accent); text-underline-offset:4px; }
+  a:hover { color:var(--accent); }
+  :focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+  .wrap { max-width:880px; margin:0 auto; padding:0 1.5rem; }
+
+  .bar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:.5rem 1.5rem; padding:1.25rem 0; font-family:var(--display); font-weight:500; }
+  .bar nav { display:flex; gap:1.25rem; align-items:center; flex-wrap:wrap; }
+  #theme { background:none; border:1px solid var(--line); color:var(--ink); border-radius:999px; padding:.3rem .8rem; font:inherit; font-size:.9rem; cursor:pointer; }
+
+  .hero { padding:clamp(3.5rem,12vw,8rem) 0 3.5rem; }
+  .hero h1 { font-family:var(--display); font-weight:800; line-height:.95; letter-spacing:-.04em; font-size:clamp(3rem,12vw,7.5rem); }
+  .hero .role { margin-top:1.5rem; font-family:var(--display); font-weight:500; font-size:1.35rem; color:var(--accent); }
+  .hero p { max-width:36em; margin-top:1.25rem; font-size:1.2rem; color:var(--muted); }
+  .btns { display:flex; gap:1rem; flex-wrap:wrap; margin-top:2rem; }
+  .btn { display:inline-block; padding:.8rem 1.4rem; border-radius:6px; font-family:var(--display); font-weight:500; text-decoration:none; border:1px solid var(--ink); }
+  .btn.main { background:var(--accent); border-color:var(--accent); color:#fff; }
+  :root[data-theme="dark"] .btn.main { color:#101a33; }
+  .btn:hover { filter:brightness(1.12); }
+
+  section { padding:3.25rem 0; border-top:1px solid var(--line); }
+  h2 { font-family:var(--display); font-weight:800; font-size:2rem; letter-spacing:-.02em; margin-bottom:1.75rem; }
+  .sub { font-family:var(--display); font-weight:500; font-size:1.15rem; margin:2.25rem 0 .5rem; }
+
+  /* experience timeline: content is chronological, so a rail is meaningful */
+  .job { display:grid; grid-template-columns:11rem 1fr; gap:.25rem 2rem; padding:1.4rem 0; border-bottom:1px solid var(--line); }
+  .job:last-child { border-bottom:0; }
+  .when { font-family:var(--display); font-size:.95rem; color:var(--muted); }
+  .job h3 { font-family:var(--display); font-size:1.25rem; font-weight:500; line-height:1.3; }
+  .org { color:var(--accent); font-size:1rem; }
+  .job ul { margin:.6rem 0 0 1.1rem; padding:0; color:var(--muted); font-size:1rem; line-height:1.6; }
+  .job li + li { margin-top:.3rem; }
+  @media (max-width:640px) { .job { grid-template-columns:1fr; } }
+
+  .pub { padding:1rem 0; border-bottom:1px solid var(--line); }
+  .pub:last-child { border-bottom:0; }
+  .pub .t { font-family:var(--display); font-weight:500; font-size:1.1rem; line-height:1.35; }
+  .pub .m { color:var(--muted); font-size:.98rem; margin-top:.25rem; }
+  .status { color:var(--accent); font-family:var(--display); font-size:.9rem; }
+
+  .skills { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1.5rem 2rem; }
+  .skills h3 { font-family:var(--display); font-size:1.05rem; font-weight:500; margin-bottom:.25rem; }
+  .skills p { color:var(--muted); font-size:1rem; line-height:1.55; }
+
+  .plain { list-style:none; padding:0; }
+  .plain li { padding:.55rem 0; border-bottom:1px solid var(--line); font-size:1rem; display:grid; grid-template-columns:1fr auto; gap:1rem; }
+  .plain li:last-child { border-bottom:0; }
+  .plain span { color:var(--muted); font-family:var(--display); font-size:.9rem; white-space:nowrap; }
+
+  .contact p { max-width:34em; color:var(--muted); }
+  footer { padding:2.5rem 0 4rem; border-top:1px solid var(--line); color:var(--muted); font-size:.95rem; }
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  .kv { display:grid; grid-template-columns:11rem 1fr; gap:.5rem 2rem; margin:0; }
+  .kv dt { font-family:var(--display); color:var(--muted); font-size:.95rem; }
+  .kv dd { margin:0; }
+  .refs { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem 2rem; }
+  .refs h3 { font-family:var(--display); font-weight:500; font-size:1.1rem; }
+  .refs p { color:var(--muted); font-size:.98rem; line-height:1.55; }
+  .pub .a { color:var(--muted); font-size:.92rem; margin-top:.2rem; }
+  .job .proj { color:var(--muted); font-size:.95rem; margin-top:.2rem; }
+  @media (max-width:640px) { .kv { grid-template-columns:1fr; gap:0; } .kv dd { margin-bottom:.6rem; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="bar">
+    <a href="#top" style="text-decoration:none">Enerico Chrispin</a>
+    <nav aria-label="Main">
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#research">Research</a>
+      <a href="#skills">Skills</a><a href="#references">References</a><a href="#contact">Contact</a>
+      <button id="theme" type="button" aria-label="Toggle dark mode">Theme</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <h1>Enerico Chrispin</h1>
+      <div class="role">Statistician · Monitoring and Evaluation · Data Analytics</div>
+      <p>I turn complex datasets into evidence for decisions in agriculture, food security, health and rural development across Malawi and beyond.</p>
+      <div class="btns">
+        <a class="btn main" href="#research">Read my research</a>
+        <a class="btn" href="mailto:enericochrispin@gmail.com">Email me</a>
+      </div>
+    </div>
+
+    <section id="about">
+      <h2>About</h2>
+      <p style="max-width:38em">Dedicated statistician with a strong foundation in econometrics, data analytics, and monitoring and evaluation, deeply committed to leveraging quantitative methods to deliver evidence-based solutions in agriculture, food security, and rural development. I design and analyse complex datasets to inform policy and programme decisions, with proficiency in R, SPSS, Stata, Python and Excel.</p>
+      <h3 class="sub">Personal information</h3>
+      <dl class="kv">
+        <dt>Full name</dt><dd>Enerico Joseph Chrispin</dd>
+        <dt>Sex</dt><dd>Male</dd>
+        <dt>Date of birth</dt><dd>16 February 1997</dd>
+        <dt>Nationality</dt><dd>Malawian</dd>
+        <dt>Residence</dt><dd>Lilongwe, Malawi</dd>
+        <dt>Postal address</dt><dd>University of Malawi, Post Office Box 280, Zomba, Malawi</dd>
+      </dl>
+      <h3 class="sub">Education</h3>
+      <ul class="plain">
+        <li>Bachelor’s Degree in Statistics, University of Malawi, Zomba <span>2022</span></li>
+        <li>Malawi School Certificate of Education, Ngabu Secondary School <span>2016</span></li>
+        <li>Junior Certificate of Education, Ngabu Secondary School <span>2014</span></li>
+      </ul>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <div id="jobs"></div>
+    </section>
+
+    <section id="research">
+      <h2>Research</h2>
+      <h3 class="sub" style="margin-top:0">Peer-reviewed articles and preprints</h3>
+      <div id="published"></div>
+      <h3 class="sub">Research papers</h3>
+      <div id="papers"></div>
+      <h3 class="sub">Scientific and conference presentations</h3>
+      <ul class="plain" id="talks"></ul>
+    </section>
+
+    <section id="skills">
+      <h2>Skills and training</h2>
+      <div class="skills">
+        <div><h3>Statistical software</h3><p>R, SPSS, Stata, Python, Excel</p></div>
+        <div><h3>Data and dashboards</h3><p>Power BI (data modelling and DAX), DHIS2, mobile data collection, digital Community Score Card tools</p></div>
+        <div><h3>Methods</h3><p>Econometrics, logistic regression, grey systems theory, constrained optimisation, survey design and sampling, data validation and cleaning</p></div>
+      </div>
+      <h3 class="sub">Trainings and certifications</h3>
+      <ul class="plain" id="certs"></ul>
+    </section>
+
+    <section id="references">
+      <h2>References</h2>
+      <div class="refs">
+        <div><h3>Associate Professor Halima Twabi</h3><p>Senior Lecturer, University of Malawi<br>Post Office Box 280, Zomba<br>+265 999 467 366<br><a href="mailto:htwabi@unima.ac.mw">htwabi@unima.ac.mw</a></p></div>
+        <div><h3>Ms. Ellen Gondwe</h3><p>Lecturer of Statistics, University of Malawi<br>Post Office Box 280, Zomba<br>+265 888 213 065<br><a href="mailto:etgondwe@unima.ac.mw">etgondwe@unima.ac.mw</a></p></div>
+        <div><h3>Ms. Doris Chikadza</h3><p>Monitoring and Evaluation, CARE Malawi<br>Private Bag A89, Lilongwe<br>+265 888 579 003 / +265 991 693 632<br><a href="mailto:chikadzadoris01@gmail.com">chikadzadoris01@gmail.com</a></p></div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p>Available for statistical analysis, M&amp;E design, data collection tools and research collaboration.</p>
+      <p style="margin-top:.75rem">Phone: +265 990 042 237 · +265 883 166 305<br>Lilongwe, Malawi</p>
+      <div class="btns"><a class="btn main" href="mailto:enericochrispin@gmail.com">enericochrispin@gmail.com</a></div>
+    </section>
+  </main>
+
+  <footer>© <span id="year"></span> Enerico Chrispin · Lilongwe, Malawi</footer>
+</div>
+
+<script>
+  const jobs = [
+    { when:"Oct 2024 – Present", title:"Social Accountability Officer (Digital Lead)", org:"CARE International in Malawi", pts:[
+      "Manage data on the digital Community Score Card (CSC), including capacity building for programme staff and project partners on CSC implementation in conservation and development contexts.",
+      "Oversee the CSC digital platform and design processes for capturing, documenting and sharing knowledge on agroforestry, livelihoods, grievance mechanisms, modern farming, school feeding, Farmers Field Business School (FFBS), water and sanitation, and literacy initiatives.",
+      "Support development of digital CSC tools tailored to project needs, encouraging collaboration and knowledge sharing across the RESTORE Africa and TIWOLOKA projects.",
+      "Identify and document best practices and lessons learned from CSC applications in natural resources conservation, sustainable livelihoods, and community education and health programmes.",
+      "Facilitate stakeholder engagement through the CSC, including community feedback mechanisms that improve project outcomes in agriculture, conservation and social services.",
+      "Provide technical assistance on social accountability and governance to Zambia, Somalia/Somaliland, South Sudan, Kenya, Uganda, Mozambique, Jordan and Palestine."] },
+    { when:"2025 – Present", title:"Research Assistant (part-time)", org:"PhD research", pts:[
+      "Support design, testing and refinement of a mobile data collection application.",
+      "Develop and implement data validation checks during collection and cleaning, such as range checks, pre-loaded lists and consistency checks.",
+      "Clean data: identify and handle missing data, incomplete data and inconsistencies, outliers and errors.",
+      "Analyse data with statistical methods, coding and software tools (SPSS and Excel).",
+      "Translate results into insights, summaries and visualisations.",
+      "Maintain records of methods, workflows and ethical standards.",
+      "Prepare datasets and documentation for long-term archiving according to university policy and ethical approval."] },
+    { when:"2024 – Present", title:"Research Associate", org:"Clinical Research Education and Management Services", pts:[
+      "Collect and enter data for clinical trials and other health-related research.",
+      "Assist in developing the research design, sampling strategy and data collection tools.",
+      "Provide technical guidance and support to team members.",
+      "Oversee data collection to ensure it follows the study protocol.",
+      "Conduct statistical analysis, data visualisation and interpretation of findings.",
+      "Prepare reports with an executive summary, methodology, results and recommendations.",
+      "Present findings to government officials, project managers and community leaders."] },
+    { when:"May – Jul 2023", title:"Field Advisor, Monitoring and Evaluation", org:"CARE International in Malawi", proj:"Protecting the Future: Ending Child Labour in Tobacco Farming (PROCLAIM) project, Ntchisi and Mchinji districts", pts:[
+      "Developed and finalised the survey design, sampling strategy and data collection tools to assess mid-project progress on child labour reduction in tobacco farming communities.",
+      "Monitored data quality, resolved issues in real time and gave feedback to field teams to keep evaluation data accurate and reliable.",
+      "Conducted statistical analysis, visualisation and interpretation to evaluate project impacts on child protection, education enrolment and sustainable farming practices.",
+      "Prepared reports with methodology, results and recommendations, supporting adaptive project management and policy adjustments.",
+      "Presented evaluation insights in joint meetings with partners, government officials and community leaders."] },
+    { when:"Jan – May 2021", title:"Monitoring and Evaluation Assistant", org:"Chikwawa District Health Office", pts:[
+      "Monitored data quality and gave feedback to field teams to keep data accurate and reliable.",
+      "Verified data for the Chikwawa District Health Centres.",
+      "Collected monthly reports from all Chikwawa District Health Centres.",
+      "Captured Outpatient Department (OPD) data into the OPD register.",
+      "Entered data into the DHIS2 database.",
+      "Took part in joint malaria supervision in selected health centres."] }
+  ];
+  const published = [
+    { a:"2026 · A. F. Lubanga, A. N. Bwanali, W. Kamanga, S. Kondowe, E. Nzima, A. Mwale, E. Chrispin, D. Nyirenda, S. Mudenda, J. Chizimu, S. Mpinganjira, C. Chitule, T. Nyirenda, C. Mitambo", t:"Patterns of antibiotic use among adult patients across seven hospitals in Malawi: opportunities and challenges for antimicrobial stewardship programmes", m:"Journal of Pharmaceutical Policy and Practice, Article 2719529", u:"https://doi.org/10.1080/20523211.2026.2719529" },
+    { a:"2026 · A. F. Lubanga, A. N. Bwanali, C. Moyo, W. Kamanga, E. Chrispin, F. Kambili, L. N. Kambewa, J. S. Chung, S. Chung, D. Chung, K. Choe, J. Choi, V. Mkandawire, C. C. Msonthi, T. Nyirenda", t:"Typhoid knowledge, prevention practices, and vaccine awareness in high-risk communities of Lilongwe, Malawi", m:"Transactions of the Royal Society of Tropical Medicine and Hygiene", u:"https://doi.org/10.1093/trstmh/trag023" },
+    { a:"2025 · N. Dzupire, D. Nyirenda, E. Chrispin, P. Phepa, P. Mwamtobe", t:"Exploring the influence of culture, religion, and law on public health, and their reciprocal impacts: a grey relational analysis approach", m:"Springer", u:"https://doi.org/10.1007/s44155-025-00249-7" },
+    { a:"2025 · A. N. Bwanali, A. F. Lubanga, S. Kondowe, E. Nzima, A. Mwale, W. Kamanga, E. Chrispin, C. Masautso, T. Kapatsa, S. Mudenda, S. Mpinganjira, G. Mwale, C. Chitule, A. Kawerama, I. Chibwe, T. Nyirenda, C. Mitambo", t:"Trends and patterns of antimicrobial resistance among common pathogens isolated from adult bloodstream and urinary tract infections in public health facilities in Malawi, 2020–2024", m:"BMC Infectious Diseases", u:"https://doi.org/10.1186/s12879-025-11335-1" },
+    { a:"2026 · D. Nyirenda, P. Phepa, E. Chrispin, N. Dzupire, J. Mutepuwa", t:"Apolarity-Based Variable Reduction in Polynomial Epidemiological Models", m:"Available at SSRN", s:"Preprint", u:"https://ssrn.com/abstract=6675203" }
+  ];
+  const papers = [
+    { a:"E. Chrispin and D. Nyirenda", t:"Efficiency, Equity and Cost Minimisation in Agricultural Input Subsidy Programmes: A Constrained Optimisation Analysis of Malawi’s Farm Input Subsidy Programme", m:"June 2026" },
+    { a:"E. Chrispin, L. Aubed, P. Phiri and D. Nyirenda", t:"The Role of Digital Media in Public Health Emergencies: Evidence from Epidemics and Pandemics", m:"", s:"Pending" },
+    { a:"E. Chrispin", t:"Factors Influencing Overweight and Obesity in Malawi: A Comparative Analysis of Binary and Multinomial Logistic Regression Models", m:"December 2025" },
+    { a:"E. Chrispin, D. Nyirenda and S. Sifoliano", t:"Leveraging DHIS2 for Integrated MEAL: A Scalable Data Pipeline Architecture for Aggregating Distributed Project Data into a Centralised Repository", m:"2024" },
+    { a:"D. Nyirenda, E. Chrispin, S. Kamwaza and B. Kishombe", t:"Predicting and Mitigating Cervical Cancer Trends in Malawi using Grey Systems Theory", m:"University of Malawi and Malawi University of Science and Technology, 2023" },
+    { a:"E. Chrispin and E. Gondwe", t:"Determinants of Overweight and Obesity in Malawian Women", m:"University of Malawi, 2022" }
+  ];
+  const talks = [
+    ["RAISE Symposium, Baylor College of Medicine: “Predicting and Mitigating Cervical Cancer Trends in Malawi using Grey Systems Theory” (presented)","25 Jul 2024"],
+    ["9th African Population Conference: “Modelling Determinants of Overweight and Obesity in Malawian Women” (presented)","20–24 May 2024"],
+    ["International Biometric Society (IBS) Malawi Inter-Region Scientific Symposium: “Modelling Determinants of Overweight and Obesity in Malawian Women” (presented)","24–25 Oct 2024"],
+    ["Scientific Writing Workshop, KUHeS and University of Malawi, T & D Conference Centre, Zomba (attended)","2022"]
+  ];
+  const certs = [
+    ["Fraud Awareness, Prevention and Detection Training, CARE Academy","Jun 2026"],
+    ["Prevention of Sexual Harassment, Exploitation and Abuse (PSHEA), CARE Academy","May 2026"],
+    ["Certificate in Project Management, Monitoring and Evaluation, University of Malawi","Apr 2025"],
+    ["Certificate in Big Data Analytics, Malawi University of Science and Technology","May–Sep 2024"],
+    ["Certificate in Business Intelligence and Data Analytics, Malawi University of Science and Technology","May–Sep 2024"],
+    ["Certificate in Child Development: Specific Learning Disorders, Alison Online","2024"],
+    ["Diploma in Data Analytics, Athena Global Education","2023"],
+    ["Certificate in Personnel Management, Athena Global Education","2023"],
+    ["Certificate in Power BI: Data Modelling and DAX, Athena Global Education","2023"],
+    ["Certificate in Operations and Project Management, Athena Global Education","2023"],
+    ["Certificate in E-Learning and Online Learning Assessment, University of Malawi","2023"]
+  ];
+
+  const $ = id => document.getElementById(id);
+  $("jobs").innerHTML = jobs.map(j => `
+    <article class="job"><div class="when">${j.when}</div>
+      <div><h3>${j.title}</h3><div class="org">${j.org}</div>${j.proj ? `<div class="proj">${j.proj}</div>` : ""}
+      <ul>${j.pts.map(p => `<li>${p}</li>`).join("")}</ul></div></article>`).join("");
+  const pub = p => `<article class="pub"><div class="t">${p.u ? `<a href="${p.u}" target="_blank" rel="noopener">${p.t}</a>` : p.t}</div>
+    <div class="a">${p.a}</div>
+    <div class="m">${p.m}${p.s ? `${p.m ? " · " : ""}<span class="status">${p.s}</span>` : ""}</div></article>`;
+  $("published").innerHTML = published.map(pub).join("");
+  $("papers").innerHTML = papers.map(pub).join("");
+  const li = a => `<li>${a[0]} <span>${a[1]}</span></li>`;
+  $("talks").innerHTML = talks.map(li).join("");
+  $("certs").innerHTML = certs.map(li).join("");
+  $("year").textContent = new Date().getFullYear();
+
+  const root = document.documentElement;
+  try { const s = localStorage.getItem("theme"); if (s) root.dataset.theme = s; } catch (e) {}
+  $("theme").addEventListener("click", () => {
+    const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    root.dataset.theme = dark ? "light" : "dark";
+    try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+  });
+</script>
+</body>
+</html>
