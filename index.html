@@ -45,6 +45,7 @@
   #research .sub { color:#f97316; }
   #skills h3 { color:#f97316; }
   .refs h3 { color:#f97316; }
+  .pub .a strong { color:var(--ink); }
 
   section { padding:3.25rem 0; border-top:1px solid var(--line); }
   h2 { font-family:var(--display); font-weight:800; font-size:2rem; letter-spacing:-.02em; margin-bottom:1.75rem; }
@@ -270,7 +271,7 @@ const certs = [
       <div><h3>${j.title}</h3><div class="org">${j.org}</div>${j.proj ? `<div class="proj">${j.proj}</div>` : ""}
       <ul>${j.pts.map(p => `<li>${p}</li>`).join("")}</ul></div></article>`).join("");
   const pub = p => `<article class="pub"><div class="t">${p.u ? `<a href="${p.u}" target="_blank" rel="noopener">${p.t}</a>` : p.t}</div>
-    <div class="a">${p.a}</div>
+    <div class="a">${p.a.replace(/E\. Chrispin/g, "<strong>E. Chrispin</strong>")}</div>
     <div class="m">${p.m}${p.s ? `${p.m ? " · " : ""}<span class="status">${p.s}</span>` : ""}</div></article>`;
   $("published").innerHTML = published.map(pub).join("");
   $("papers").innerHTML = papers.map(pub).join("");
